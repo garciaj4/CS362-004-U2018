@@ -73,7 +73,7 @@ int main() {
 	assert(G.playedCardCount == 0);
 	assert(G.deckCount[G.whoseTurn] == 5);
 
-	status = playVillage(&G, 4);
+	status = cardEffect(village, 0, 0, 0, &G, 4, 0);
 	assert(status == 0);
 
 	assertNEqual("Test if village was removed from the hand", village, G.hand[G.whoseTurn][4]);

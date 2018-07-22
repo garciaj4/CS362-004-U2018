@@ -74,7 +74,7 @@ int main() {
 	assert(G.handCount[(G.whoseTurn + 1)%2] == 0);
 	assert(G.deckCount[(G.whoseTurn + 1)%2] == 10);
 
-	status = playCouncilRoom(&G, 4);
+	status = cardEffect(council_room, 0, 0, 0, &G, 4, 0);
 	assert(status == 0);
 
 	assertEqual("Test to see if our actions was reduced by 1", 0, G.numActions);

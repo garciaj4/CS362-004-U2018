@@ -79,13 +79,13 @@ int main() {
 	assert(G.handCount[G.whoseTurn] == 5);
 	assert(G.deckCount[G.whoseTurn] == 5);
 	assert(G.playedCardCount == 0);
-	status = playAdventurer(&G);
+	status = cardEffect(adventurer, 0, 0, 0, &G, 4, 0);
 	assertEqual("Test to see if our actions was reduced by 1", 0, G.numActions);
 	assertNEqual("Test if adventurer was removed from our hand", G.hand[G.whoseTurn][4], adventurer);
 	assertEqual("Test if our played cards icnreased by one", 1, G.playedCardCount);
 	assertEqual("Test if our deck was reduced by three cards", 2, G.deckCount[G.whoseTurn]);
 	assertEqual("Test if our hand count increased by one cards", 6, G.handCount[G.whoseTurn]);
-	int idx;
+
 	int copperFlag = 1;
 	if(G.hand[G.whoseTurn][G.handCount[G.whoseTurn]-2] != copper){
 		copperFlag = 0;

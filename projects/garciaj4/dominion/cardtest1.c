@@ -65,7 +65,7 @@ int main() {
 	assert(G.deckCount[G.whoseTurn] == 5);
 	assert(G.playedCardCount == 0);
 
-	status = playSmithy(&G, 0);
+	status = cardEffect(smithy, 0, 0, 0, &G, 0, 0);
 	assert(status == 0);
 	assertEqual("Test to see if our actions was reduced by 1", 0, G.numActions);
 	assertEqual("Test to see if our deck count was reduced by 3", 2, G.deckCount[G.whoseTurn]);
